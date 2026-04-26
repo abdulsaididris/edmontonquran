@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Don't Have to Travel to Egypt Anymore | Tarteel Quran Institute</title>
+    <meta name="description" content="Elite Quranic education with a high-level Sanad is now available locally in Edmonton.">
+    <link rel="canonical" href="https://edmontonquran.ca/blog-local-expert.html">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+        .blog-article h1 {
+            font-size: 2.5rem;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .blog-article img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+        }
+        .blog-article p {
+            font-size: 1.15rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+        .blog-article h2 {
+            color: var(--white);
+            margin: 2.5rem 0 1rem;
+            font-family: 'Cinzel Decorative', serif;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+
+<header>
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="Al Tarteel Quran Institute"></a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="apply.html" class="btn-nav">Apply Now</a>
+    </nav>
+</header>
+
+<section style="padding-top:4rem;">
+    <div class="blog-article reveal">
+        <a href="blog.html" style="color: var(--gold); text-decoration: none; display: inline-block; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">&larr; Back to Blog</a>
+        
+        <h1>You Don't Have to Travel to Egypt Anymore â€” Edmonton Has the Sheikh</h1>
+        <img src="https://images.unsplash.com/photo-1563813936662-79e5306617a9?auto=format&fit=crop&w=1200&q=80" alt="Edmonton skyline">
+        
+        <p>For generations, the narrative among dedicated students of Islamic knowledge in the West was clear: if you wanted to master the Quran, achieve true eloquence in Tajweed, and acquire a prestigious Sanad (chain of transmission), you had to pack your bags. Destinations like Egypt, Saudi Arabia, or Mauritania were the standard.</p>
+        
+        <h2>The Burden of Travel</h2>
+        <p>While traveling for knowledge is a noble and highly rewarded endeavor in Islam, it presents significant practical challenges for the modern family. Uprooting children, leaving careers, and adjusting to completely different cultures and educational systems abroad is not a viable option for the vast majority of Canadian Muslims. Consequently, many highly capable students were forced to settle for sub-par local education.</p>
+        
+        <h2>World-Class Expertise, Locally Accessible</h2>
+        <p>Alhamdulillah, that narrative has changed. The expertise that families once flew across the world to find is now residing right here in Edmonton. With the establishment of Tarteel Quran Institute, students now have direct access to Sheikh Mohamed Moamen.</p>
+
+        <p>As a former student of the internationally acclaimed Dr. Ahmad Essa El Masarawi, Sheikh Moamen brings the highest echelon of Egyptian Quranic scholarship directly to Alberta. He holds a high-level Sanad that connects his students directly to the Prophet Muhammad ï·º. You no longer have to compromise on the quality of your child's Islamic education or endure the hardships of international relocation. The highest standard of Qira'at and Tajweed is now local.</p>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-inner">
+        <a href="index.html" class="footer-logo"><img src="logo.jpg" alt="Al Tarteel Quran Institute"></a>
+        <div class="footer-info">
+            <h4>Location</h4>
+            <p>Islamic Centre<br><strong>5525 Gateway Blvd, Edmonton, AB</strong></p>
+        </div>
+        <div class="footer-info">
+            <h4>Contact</h4>
+            <p><strong>587 566 7545</strong><br><a href="https://edmontonquran.ca" style="color:#666;">edmontonquran.ca</a></p>
+        </div>
+        <div class="footer-info">
+            <h4>Director</h4>
+            <p><strong>Sheikh Mohamed Moamen</strong><br>High-Level Sanad Expert</p>
+        </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Tarteel Quran Institute â€” Edmonton, Alberta</div>
+</footer>
+
+<script>
+const canvas = document.getElementById('stars-canvas');
+const ctx = canvas.getContext('2d');
+let stars = [];
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+function initStars() { stars = []; for (let i=0;i<200;i++) stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.2+0.2,alpha:Math.random(),speed:Math.random()*0.003+0.001}); }
+function drawStars() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(s=>{s.alpha+=s.speed;if(s.alpha>1||s.alpha<0)s.speed*=-1;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(212,175,55,${s.alpha*0.6})`;ctx.fill();}); requestAnimationFrame(drawStars); }
+resize(); initStars(); drawStars();
+window.addEventListener('resize',()=>{resize();initStars();});
+const observer = new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);observer.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+</script>
+<!-- WhatsApp Plugin -->
+<a href="https://wa.me/15875667545" target="_blank" class="whatsapp-btn" title="Communicate directly with the Sheikh">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="white">
+        <path d="M16 1.4C7.9 1.4 1.4 7.9 1.4 16c0 2.6.7 5.1 2 7.3L1.5 30.5l7.4-1.9c2.2 1.2 4.6 1.8 7.2 1.8 8.1 0 14.6-6.5 14.6-14.6S24.1 1.4 16 1.4zm0 24.5c-2.2 0-4.3-.6-6.1-1.7l-.4-.3-4.5 1.2 1.2-4.4-.3-.5c-1.2-1.9-1.9-4.2-1.9-6.5 0-6.9 5.6-12.5 12.5-12.5s12.5 5.6 12.5 12.5-5.6 12.5-12.5 12.5zM22.8 19c-.4-.2-2.2-1.1-2.6-1.2-.4-.1-.6-.2-.9.2-.2.4-1 1.2-1.2 1.4-.2.2-.5.3-.9.1-1.9-1-3.6-2.5-4.8-4.3-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.4l.3-.4c.1-.2.2-.3.1-.6 0-.2-.9-2.2-1.2-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.8.1-1.2.6-.4.5-1.5 1.5-1.5 3.6s1.6 4.2 1.8 4.5c.2.3 3.1 4.7 7.5 6.6 1 .4 1.9.7 2.6.9 1.1.3 2 .2 2.7.1.8-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.3-.3-.4-.7-.6z"/>
+    </svg>
+    <span>Direct Message</span>
+</a>
+</body>
+</html>
+

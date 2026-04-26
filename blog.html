@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Tarteel Quran Institute Edmonton</title>
+    <meta name="description" content="Insights on Quran memorization for Edmonton families &mdash; the importance of Hifz for children, the scarcity of serious Quran schools, and why world-class expertise is now local.">
+    <link rel="canonical" href="https://edmontonquran.ca/blog.html">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+
+<header>
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="Al Tarteel Quran Institute"></a>
+    <div class="header-hadith">
+        <span class="arabic">إِنَّ اللَّهَ يَرْفَعُ بِهَذَا الْكِتَابِ أَقْوَامًا وَيَضَعُ بِهِ آخَرِينَ</span>
+        <span class="translation">The Prophet Muhammad (s.a.w) said, "Indeed Allah, through this Book, raises some peoples and lowers others."</span>
+        <span class="source">Source: Muslim no. 996 &ndash; [Sahih]</span>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="apply.html" class="btn-nav">Apply Now</a>
+    </nav>
+</header>
+
+<section style="padding-top:8rem;">
+    <div class="section-header reveal">
+        <span class="section-kicker">Insights &amp; Knowledge</span>
+        <h2 class="section-title">From the Institute</h2>
+    </div>
+
+    <div class="blog-grid">
+        <div class="blog-card reveal">
+            <img src="blog-child.jpg" alt="Child learning Quran">
+            <div class="blog-content">
+                <span class="tag">Parenting &middot; Hifz</span>
+                <h3>Why Your Child's Mind Is the Greatest Gift &mdash; and How to Fill It</h3>
+                <p>Children between the ages of 5 and 12 possess a neurological window of extraordinary retention. Push for daily Hifz now, before the world fills that space with something else.</p>
+                <a href="blog-child-mind.html">Read Full Article &rarr;</a>
+            </div>
+        </div>
+
+        <div class="blog-card reveal">
+            <img src="blog-school.jpg" alt="Quran school classroom">
+            <div class="blog-content">
+                <span class="tag">Edmonton &middot; Education</span>
+                <h3>The Scarcity of Serious Quran Schools in Western Canada</h3>
+                <p>Weekend programs teach the basics. But where do serious students go when they want Ijazah-level mastery? Very few institutions in all of Canada can answer that question.</p>
+                <a href="blog-scarcity.html">Read Full Article &rarr;</a>
+            </div>
+        </div>
+
+        <div class="blog-card reveal">
+            <img src="blog-edmonton.jpg" alt="Edmonton skyline">
+            <div class="blog-content">
+                <span class="tag">Edmonton &middot; Local Expert</span>
+                <h3>You Don't Have to Travel to Egypt Anymore &mdash; Edmonton Has the Sheikh</h3>
+                <p>For years, dedicated families flew their children to Cairo seeking scholars of this calibre. That expertise is now here &mdash; at 5525 Gateway Blvd, Edmonton, Alberta.</p>
+                <a href="blog-local-expert.html">Read Full Article &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-inner">
+        <a href="index.html" class="footer-logo"><img src="logo.jpg" alt="Al Tarteel Quran Institute"></a>
+        <div class="footer-info">
+            <h4>Location</h4>
+            <p>Islamic Centre<br><strong>5525 Gateway Blvd, Edmonton, AB</strong></p>
+        </div>
+        <div class="footer-info">
+            <h4>Contact</h4>
+            <p><strong>587 566 7545</strong><br><a href="https://edmontonquran.ca" style="color:#666;">edmontonquran.ca</a></p>
+        </div>
+        <div class="footer-info">
+            <h4>Director</h4>
+            <p><strong>Sheikh Mohamed Moamen</strong><br>High-Level Sanad Expert</p>
+        </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Tarteel Quran Institute &mdash; Edmonton, Alberta</div>
+</footer>
+
+<script>
+const canvas = document.getElementById('stars-canvas');
+const ctx = canvas.getContext('2d');
+let stars = [];
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+function initStars() { stars = []; for (let i=0;i<200;i++) stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.2+0.2,alpha:Math.random(),speed:Math.random()*0.003+0.001}); }
+function drawStars() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(s=>{s.alpha+=s.speed;if(s.alpha>1||s.alpha<0)s.speed*=-1;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(212,175,55,${s.alpha*0.6})`;ctx.fill();}); requestAnimationFrame(drawStars); }
+resize(); initStars(); drawStars();
+window.addEventListener('resize',()=>{resize();initStars();});
+const observer = new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);observer.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+</script>
+
+<style>
+.whatsapp-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #25d366;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.whatsapp-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37,211,102,0.5); }
+</style>
+
+<a href="https://wa.me/15875667545" target="_blank" class="whatsapp-btn" title="Message Sheikh Mohamed Moamen on WhatsApp">
+    <svg viewBox="0 0 32 32" width="24" height="24" fill="white">
+        <path d="M16 1.4C7.9 1.4 1.4 7.9 1.4 16c0 2.6.7 5.1 2 7.3L1.5 30.5l7.4-1.9c2.2 1.2 4.6 1.8 7.2 1.8 8.1 0 14.6-6.5 14.6-14.6S24.1 1.4 16 1.4zm0 24.5c-2.2 0-4.3-.6-6.1-1.7l-.4-.3-4.5 1.2 1.2-4.4-.3-.5c-1.2-1.9-1.9-4.2-1.9-6.5 0-6.9 5.6-12.5 12.5-12.5s12.5 5.6 12.5 12.5-5.6 12.5-12.5 12.5zM22.8 19c-.4-.2-2.2-1.1-2.6-1.2-.4-.1-.6-.2-.9.2-.2.4-1 1.2-1.2 1.4-.2.2-.5.3-.9.1-1.9-1-3.6-2.5-4.8-4.3-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.4l.3-.4c.1-.2.2-.3.1-.6 0-.2-.9-2.2-1.2-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.8.1-1.2.6-.4.5-1.5 1.5-1.5 3.6s1.6 4.2 1.8 4.5c.2.3 3.1 4.7 7.5 6.6 1 .4 1.9.7 2.6.9 1.1.3 2 .2 2.7.1.8-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.3-.3-.4-.7-.6z"/>
+    </svg>
+    <span>Direct Message</span>
+</a>
+
+</body>
+</html>

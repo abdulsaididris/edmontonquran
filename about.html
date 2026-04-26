@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Sheikh Mohamed Moamen | Tarteel Quran Institute Edmonton</title>
+    <meta name="description" content="Sheikh Mohamed Moamen &mdash; a distinguished Quranic scholar in Edmonton with a high-level Sanad and former student of Dr. Ahmad Essa El Masarawi.">
+    <link rel="canonical" href="https://edmontonquran.ca/about.html">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+
+<header>
+    <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Al Tarteel Quran Institute">
+    </a>
+    <div class="header-hadith">
+        <span class="arabic">إِنَّ اللَّهَ يَرْفَعُ بِهَذَا الْكِتَابِ أَقْوَامًا وَيَضَعُ بِهِ آخَرِينَ</span>
+        <span class="translation">The Prophet Muhammad (s.a.w) said, "Indeed Allah, through this Book, raises some peoples and lowers others."</span>
+        <span class="source">Source: Muslim no. 996 &ndash; [Sahih]</span>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="apply.html" class="btn-nav">Apply Now</a>
+    </nav>
+</header>
+
+<section style="padding-top:8rem;">
+    <div class="section-header reveal">
+        <span class="section-kicker">Our Director</span>
+        <h2 class="section-title">Sheikh Mohamed Moamen</h2>
+    </div>
+
+    <div class="sheikh-layout reveal">
+        <div class="sheikh-photo-wrap">
+            <img src="sheikh.jpg" alt="Sheikh Mohamed Moamen">
+        </div>
+        <div class="sheikh-info">
+            <h2>Expertise &amp; Sanad</h2>
+            <span class="sanad-tag">High-Level Sanad &middot; Edmonton Alberta</span>
+            <p>Sheikh Mohamed Moamen is a distinguished Quranic scholar based in Edmonton, dedicated to preserving and transmitting the highest standards of Quranic recitation and memorization to the next generation.</p>
+            <p>He holds a <strong style="color:var(--gold);">high-level Sanad</strong> &mdash; an unbroken chain of transmission connecting directly to the Prophet Muhammad &#xFDFA; &mdash; ensuring that every student who studies under him receives the purest, most authentic form of Quranic recitation.</p>
+            <p>Sheikh Moamen personally oversees every student's daily memorization assignments, ensuring no one advances without demonstrating true mastery at the highest calibre.</p>
+
+            <div class="sanad-box">
+                <h4>Former Student of Dr. Ahmad Essa El Masarawi</h4>
+                <p>Sheikh Moamen is a proud former student of the globally esteemed <strong style="color:var(--gold);">Dr. Ahmad Essa El Masarawi</strong> &mdash; renowned Egyptian scholar, premier Quraa expert, and former Grand Sheikh of the Reciters in Egypt (2004&ndash;2014). Dr. Masarawi is universally recognized as a top expert in Tajweed and the ten Qiraa-aat, celebrated for his contributions to Quranic studies and his teaching role at Al-Azhar University.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VIDEOS -->
+<section>
+    <div class="section-header reveal">
+        <span class="section-kicker">Listen to the Masters</span>
+        <h2 class="section-title">Recordings &amp; Recitations</h2>
+    </div>
+    <div class="videos-grid">
+        <div class="video-card reveal">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/bFt3sM5of5Y?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=bFt3sM5of5Y" title="Recitation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="video-card reveal">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/mE2ThMDw7Dg?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=mE2ThMDw7Dg" title="Recitation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="video-card reveal">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/77eX2n6u4Oo?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=77eX2n6u4Oo" title="Recitation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-inner">
+        <a href="index.html" class="footer-logo"><img src="logo.jpg" alt="Al Tarteel Quran Institute"></a>
+        <div class="footer-info">
+            <h4>Location</h4>
+            <p>Islamic Centre<br><strong>5525 Gateway Blvd, Edmonton, AB</strong></p>
+        </div>
+        <div class="footer-info">
+            <h4>Contact</h4>
+            <p><strong>587 566 7545</strong><br><a href="https://edmontonquran.ca" style="color:#666;">edmontonquran.ca</a></p>
+        </div>
+        <div class="footer-info">
+            <h4>Director</h4>
+            <p><strong>Sheikh Mohamed Moamen</strong><br>High-Level Sanad Expert</p>
+        </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Tarteel Quran Institute &mdash; Edmonton, Alberta</div>
+</footer>
+
+<script>
+const canvas = document.getElementById('stars-canvas');
+const ctx = canvas.getContext('2d');
+let stars = [];
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+function initStars() { stars = []; for (let i=0;i<200;i++) stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.2+0.2,alpha:Math.random(),speed:Math.random()*0.003+0.001}); }
+function drawStars() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(s=>{s.alpha+=s.speed;if(s.alpha>1||s.alpha<0)s.speed*=-1;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(212,175,55,${s.alpha*0.6})`;ctx.fill();}); requestAnimationFrame(drawStars); }
+resize(); initStars(); drawStars();
+window.addEventListener('resize',()=>{resize();initStars();});
+const observer = new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);observer.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+</script>
+
+<style>
+.whatsapp-btn { position:fixed; bottom:24px; right:24px; background:#25d366; color:white; padding:12px 22px; border-radius:50px; display:flex; align-items:center; gap:10px; text-decoration:none; z-index:1000; box-shadow:0 4px 15px rgba(37,211,102,0.4); font-family:'Rajdhani',sans-serif; font-weight:700; font-size:1rem; letter-spacing:1px; transition:transform 0.3s, box-shadow 0.3s; }
+.whatsapp-btn:hover { transform:translateY(-3px); box-shadow:0 8px 25px rgba(37,211,102,0.5); }
+</style>
+<a href="https://wa.me/15875667545" target="_blank" class="whatsapp-btn" title="Message Sheikh Mohamed Moamen on WhatsApp">
+    <svg viewBox="0 0 32 32" width="24" height="24" fill="white"><path d="M16 1.4C7.9 1.4 1.4 7.9 1.4 16c0 2.6.7 5.1 2 7.3L1.5 30.5l7.4-1.9c2.2 1.2 4.6 1.8 7.2 1.8 8.1 0 14.6-6.5 14.6-14.6S24.1 1.4 16 1.4zm0 24.5c-2.2 0-4.3-.6-6.1-1.7l-.4-.3-4.5 1.2 1.2-4.4-.3-.5c-1.2-1.9-1.9-4.2-1.9-6.5 0-6.9 5.6-12.5 12.5-12.5s12.5 5.6 12.5 12.5-5.6 12.5-12.5 12.5zM22.8 19c-.4-.2-2.2-1.1-2.6-1.2-.4-.1-.6-.2-.9.2-.2.4-1 1.2-1.2 1.4-.2.2-.5.3-.9.1-1.9-1-3.6-2.5-4.8-4.3-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.4l.3-.4c.1-.2.2-.3.1-.6 0-.2-.9-2.2-1.2-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.8.1-1.2.6-.4.5-1.5 1.5-1.5 3.6s1.6 4.2 1.8 4.5c.2.3 3.1 4.7 7.5 6.6 1 .4 1.9.7 2.6.9 1.1.3 2 .2 2.7.1.8-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.3-.3-.4-.7-.6z"/></svg>
+    <span>Direct Message</span>
+</a>
+
+</body>
+</html>
