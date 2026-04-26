@@ -633,42 +633,199 @@ footer {
 .reveal { opacity:0; transform:translateY(40px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
-/* ── RESPONSIVE ── */
-@media (max-width:900px) {
-    nav a:not(.btn-nav) { display:none; }
-    .sheikh-layout { grid-template-columns:1fr; }
-    .schedule-grid { grid-template-columns:1fr; }
-    .hero h1 { font-size:2.5rem; }
+/* ── HAMBURGER BUTTON ── */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+    flex-shrink: 0;
+}
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: transform 0.35s var(--ease), opacity 0.3s;
+    transform-origin: center;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE NAV OVERLAY ── */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.97);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s var(--ease);
+}
+.mobile-nav.open {
+    opacity: 1;
+    pointer-events: all;
+}
+.mobile-nav a {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.6rem;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 3px;
+    transition: color 0.3s;
+    position: relative;
+}
+.mobile-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 2px;
+    background: var(--gold);
+    transition: width 0.4s var(--ease);
+}
+.mobile-nav a:hover { color: var(--gold); }
+.mobile-nav a:hover::after { width: 100%; }
+.mobile-nav .btn-nav-mobile {
+    border: 1px solid var(--gold);
+    border-radius: 40px;
+    padding: 0.8rem 2.5rem;
+    color: var(--gold) !important;
+    margin-top: 1rem;
+}
+.mobile-nav .btn-nav-mobile:hover {
+    background: var(--gold);
+    color: #000 !important;
+}
+.mobile-nav-hadith {
+    margin-top: 2rem;
+    text-align: center;
+    padding: 0 2rem;
+    border-top: 1px solid rgba(212,175,55,0.2);
+    padding-top: 2rem;
+}
+.mobile-nav-hadith .arabic {
+    font-size: 1.1rem;
+    color: var(--gold);
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+.mobile-nav-hadith .source {
+    font-size: 0.75rem;
+    color: #666;
+    letter-spacing: 1px;
 }
 
-/* ── WHATSAPP PLUGIN ── */
+/* ── WHATSAPP ── */
 .whatsapp-btn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #25D366;
+    bottom: 24px;
+    right: 24px;
+    background: #25d366;
     color: white;
+    padding: 12px 22px;
+    border-radius: 50px;
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 12px 20px;
-    border-radius: 50px;
     text-decoration: none;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(37,211,102,0.4);
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
     letter-spacing: 1px;
-    text-transform: uppercase;
-    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-    z-index: 9999;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-.whatsapp-btn:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
-    color: white;
+.whatsapp-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37,211,102,0.5); color: white; }
+
+/* ── TABLET ── */
+@media (max-width: 1024px) {
+    .sheikh-layout { gap: 3rem; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 4rem); }
 }
-@media (max-width: 600px) {
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+
+    /* Header */
+    header {
+        padding: 0.5rem 5%;
+        flex-wrap: nowrap;
+    }
+    .header-hadith { display: none; }
+    nav { display: none; }
+    .hamburger { display: flex; }
+    .mobile-nav { display: flex; }
+    .logo img { height: 65px; }
+
+    /* Hero */
+    .hero {
+        padding: 5rem 5% 3rem;
+        min-height: auto;
+    }
+    .hero img { display: none; } /* hide background images on mobile */
+    .hero-badge {
+        position: relative;
+        top: auto; right: auto;
+        margin-bottom: 1.5rem;
+        align-self: center;
+    }
+    .arabic-opener { font-size: 1.2rem; letter-spacing: 3px; }
+    .hero h1 { font-size: 2rem; }
+    .hero-sub { font-size: 1rem; }
+    .hero-btns { flex-direction: column; gap: 1rem; width: 100%; }
+    .btn-primary { text-align: center; width: 100%; }
+
+    /* Sections */
+    section { padding: 4rem 5%; }
+    .section-header { margin-bottom: 3rem; }
+
+    /* Grids */
+    .videos-grid { grid-template-columns: 1fr; }
+    .programs-grid { grid-template-columns: 1fr; }
+    .schedule-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+
+    /* Sheikh */
+    .sheikh-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .sheikh-info h2 { font-size: 1.6rem; }
+    .sheikh-photo-wrap img { max-height: 350px; object-fit: cover; }
+
+    /* Form */
+    .form-container { padding: 2rem 1.5rem; }
+
+    /* Footer */
+    .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 2rem; }
+    .footer-logo img { height: 90px; }
+
+    /* WhatsApp - icon only */
     .whatsapp-btn span { display: none; }
-    .whatsapp-btn { padding: 15px; right: 20px; bottom: 20px; }
+    .whatsapp-btn { padding: 14px; }
+
+    /* Schedule time font */
+    .schedule-card .time { font-size: 1.5rem; }
 }
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.7rem; }
+    .section-title { font-size: 1.5rem; }
+    .form-container { padding: 1.5rem 1rem; }
+    .sanad-box { padding: 1.5rem; }
+}
+

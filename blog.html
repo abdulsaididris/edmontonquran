@@ -25,7 +25,22 @@
         <a href="blog.html">Blog</a>
         <a href="apply.html" class="btn-nav">Apply Now</a>
     </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
 </header>
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="about.html" onclick="closeMobileNav()">About</a>
+    <a href="blog.html" onclick="closeMobileNav()">Blog</a>
+    <a href="apply.html" class="btn-nav-mobile" onclick="closeMobileNav()">Apply Now</a>
+    <div class="mobile-nav-hadith">
+        <span class="arabic">إِنَّ اللَّهَ يَرْفَعُ بِهَذَا الْكِتَابِ أَقْوَامًا وَيَضَعُ بِهِ آخَرِينَ</span>
+        <span class="source">Muslim no. 996 &ndash; [Sahih]</span>
+    </div>
+</nav>
 
 <section style="padding-top:8rem;">
     <div class="section-header reveal">
@@ -96,6 +111,10 @@ resize(); initStars(); drawStars();
 window.addEventListener('resize',()=>{resize();initStars();});
 const observer = new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);observer.unobserve(e.target);}});},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobile-nav');
+function closeMobileNav(){hamburger.classList.remove('open');mobileNav.classList.remove('open');document.body.style.overflow='';}
+hamburger.addEventListener('click',()=>{const o=hamburger.classList.toggle('open');mobileNav.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});
 </script>
 
 <style>
