@@ -76,10 +76,14 @@
         <h2 class="section-title">Recordings &amp; Recitations</h2>
     </div>
     <div class="videos-grid">
-        <div class="video-card reveal">
+        <div class="video-card reveal" style="position:relative;">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/bFt3sM5of5Y?autoplay=1&amp;loop=1&amp;playlist=bFt3sM5of5Y" title="Recitation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="first-video" src="https://www.youtube.com/embed/bFt3sM5of5Y?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=bFt3sM5of5Y" title="Recitation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+            <button id="sound-btn" onclick="playWithSound()" style="position:absolute;bottom:18px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);border:1px solid rgba(212,175,55,0.6);color:#d4af37;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:2px;padding:10px 22px;border-radius:50px;cursor:pointer;z-index:10;transition:all 0.3s;display:flex;align-items:center;gap:8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#d4af37"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+                Play with Sound
+            </button>
         </div>
         <div class="video-card reveal">
             <div class="video-wrapper">
@@ -127,7 +131,15 @@ document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
 const hamburger=document.getElementById('hamburger');
 const mobileNav=document.getElementById('mobile-nav');
 function closeMobileNav(){hamburger.classList.remove('open');mobileNav.classList.remove('open');document.body.style.overflow='';}
-hamburger.addEventListener('click',()=>{const o=hamburger.classList.toggle('open');mobileNav.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});
+hamburger.addEventListener('click',()=>{const o=hamburger.classList.toggle('open');mobileNav.classList.toggle('open');document.body.style.overflow=o?'hidden':'';}); 
+function playWithSound() {
+    const iframe = document.getElementById('first-video');
+    const btn = document.getElementById('sound-btn');
+    iframe.src = 'https://www.youtube.com/embed/bFt3sM5of5Y?autoplay=1&loop=1&playlist=bFt3sM5of5Y';
+    btn.style.opacity = '0';
+    btn.style.pointerEvents = 'none';
+    setTimeout(() => btn.style.display = 'none', 400);
+}
 </script>
 
 <style>
