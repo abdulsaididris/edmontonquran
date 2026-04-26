@@ -805,7 +805,7 @@ footer {
     /* Sheikh */
     .sheikh-layout { grid-template-columns: 1fr; gap: 2.5rem; }
     .sheikh-info h2 { font-size: 1.6rem; }
-    .sheikh-photo-wrap img { max-height: 350px; object-fit: cover; }
+    .sheikh-photo-wrap img { max-height: none; width: 100%; object-fit: contain; }
 
     /* Form */
     .form-container { padding: 2rem 1.5rem; }
