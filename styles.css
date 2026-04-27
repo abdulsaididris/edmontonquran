@@ -803,9 +803,10 @@ footer {
     .blog-grid { grid-template-columns: 1fr; }
 
     /* Sheikh */
-    .sheikh-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .sheikh-layout { grid-template-columns: 1fr; gap: 2rem; }
     .sheikh-info h2 { font-size: 1.6rem; }
-    .sheikh-photo-wrap img { max-height: none; width: 100%; object-fit: contain; }
+    .sheikh-photo-wrap { max-width: 280px; margin: 0 auto; }
+    .sheikh-photo-wrap img { width: 100%; height: auto; object-fit: contain; display: block; }
 
     /* Form */
     .form-container { padding: 2rem 1.5rem; }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,40 +8,12 @@
     <link rel="canonical" href="https://edmontonquran.ca/blog-child-mind.html">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .blog-article {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 5%;
-            background: var(--panel);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-        }
-        .blog-article h1 {
-            font-size: 2.5rem;
-            color: var(--gold-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-        .blog-article img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            border: 1px solid var(--border);
-        }
-        .blog-article p {
-            font-size: 1.15rem;
-            color: var(--text);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            font-weight: 500;
-        }
-        .blog-article h2 {
-            color: var(--white);
-            margin: 2.5rem 0 1rem;
-            font-family: 'Cinzel Decorative', serif;
-        }
+        .blog-article { max-width: 800px; margin: 0 auto; padding: 2rem 5%; background: var(--panel); border: 1px solid var(--border); border-radius: 16px; }
+        .blog-article h1 { font-size: 2.2rem; color: var(--gold-light); margin-bottom: 1.5rem; line-height: 1.2; font-family: 'Cinzel Decorative', serif; }
+        .blog-article img { width: 100%; height: 380px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; border: 1px solid var(--border); }
+        .blog-article p { font-size: 1.15rem; color: #222; margin-bottom: 1.5rem; line-height: 1.8; font-weight: 500; }
+        .blog-article h2 { color: var(--gold-light); margin: 2.5rem 0 1rem; font-family: 'Cinzel Decorative', serif; font-size: 1.3rem; }
+        @media (max-width: 768px) { .blog-article h1 { font-size: 1.6rem; } .blog-article img { height: 220px; } }
     </style>
 </head>
 <body>
@@ -50,30 +22,50 @@
 
 <header>
     <a href="index.html" class="logo"><img src="logo.jpg" alt="Al Tarteel Quran Institute"></a>
+    <div class="header-hadith">
+        <span class="arabic">إِنَّ اللَّهَ يَرْفَعُ بِهَذَا الْكِتَابِ أَقْوَامًا وَيَضَعُ بِهِ آخَرِينَ</span>
+        <span class="translation">The Prophet Muhammad (s.a.w) said, "Indeed Allah, through this Book, raises some peoples and lowers others."</span>
+        <span class="source">Source: Muslim no. 996 &ndash; [Sahih]</span>
+    </div>
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="blog.html">Blog</a>
         <a href="apply.html" class="btn-nav">Apply Now</a>
     </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
 </header>
 
-<section style="padding-top:4rem;">
+<!-- MOBILE NAV -->
+<nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="about.html" onclick="closeMobileNav()">About</a>
+    <a href="blog.html" onclick="closeMobileNav()">Blog</a>
+    <a href="apply.html" class="btn-nav-mobile" onclick="closeMobileNav()">Apply Now</a>
+    <div class="mobile-nav-hadith">
+        <span class="arabic">إِنَّ اللَّهَ يَرْفَعُ بِهَذَا الْكِتَابِ أَقْوَامًا وَيَضَعُ بِهِ آخَرِينَ</span>
+        <span class="source">Muslim no. 996 &ndash; [Sahih]</span>
+    </div>
+</nav>
+
+<section style="padding-top:7rem;">
     <div class="blog-article reveal">
-        <a href="blog.html" style="color: var(--gold); text-decoration: none; display: inline-block; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">&larr; Back to Blog</a>
-        
-        <h1>Why Your Child's Mind Is the Greatest Gift â€” and How to Fill It</h1>
-        <img src="https://images.unsplash.com/photo-1609599006353-e629aaab31ce?auto=format&fit=crop&w=1200&q=80" alt="Child learning Quran">
-        
+        <a href="blog.html" style="color:var(--gold);text-decoration:none;display:inline-block;margin-bottom:2rem;text-transform:uppercase;letter-spacing:2px;">&larr; Back to Blog</a>
+
+        <h1>Why Your Child's Mind Is the Greatest Gift &mdash; and How to Fill It</h1>
+        <img src="blog-child.jpg" alt="Child learning Quran">
+
         <p>Children between the ages of 5 and 12 possess a neurological window of extraordinary retention. It is a period where the mind operates like a sponge, absorbing everything it encounters with minimal effort. As parents, this presents both a tremendous opportunity and a profound responsibility.</p>
-        
+
         <h2>The Golden Years of Memorization</h2>
         <p>In classical Islamic tradition, this age bracket is known as the optimal time for Hifz (memorization). The young mind is relatively free from the complex worldly anxieties and responsibilities that consume adults. When a child memorizes a Surah during these formative years, it etches into their memory far more permanently than it would in adulthood.</p>
-        
+
         <p>Push for daily Hifz now, before the world fills that space with something else. The modern environment is filled with constant digital distractions that compete for our children's attention. Establishing a rigorous routine of Quranic study provides a necessary spiritual anchor.</p>
 
         <h2>Consistency is Key</h2>
-        <p>The secret to successful memorization isn't necessarily long grueling hours, but rather uncompromising consistency. A daily commitment, even if short, yields far greater results than sporadic, lengthy sessions. At Tarteel Quran Institute, we structure our programs to build this vital habit of daily review and new memorization.</p>
+        <p>The secret to successful memorization is not necessarily long grueling hours, but rather uncompromising consistency. A daily commitment, even if short, yields far greater results than sporadic, lengthy sessions. At Tarteel Quran Institute, we structure our programs to build this vital habit of daily review and new memorization.</p>
 
         <p>By investing in their Quranic education today, you are providing them with a companion that will guide, protect, and illuminate their path for the rest of their lives.</p>
     </div>
@@ -95,7 +87,7 @@
             <p><strong>Sheikh Mohamed Moamen</strong><br>High-Level Sanad Expert</p>
         </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Tarteel Quran Institute â€” Edmonton, Alberta</div>
+    <div class="footer-bottom">&copy; 2026 Tarteel Quran Institute &mdash; Edmonton, Alberta</div>
 </footer>
 
 <script>
@@ -109,14 +101,21 @@ resize(); initStars(); drawStars();
 window.addEventListener('resize',()=>{resize();initStars();});
 const observer = new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);observer.unobserve(e.target);}});},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobile-nav');
+function closeMobileNav(){hamburger.classList.remove('open');mobileNav.classList.remove('open');document.body.style.overflow='';}
+hamburger.addEventListener('click',()=>{const o=hamburger.classList.toggle('open');mobileNav.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});
 </script>
-<!-- WhatsApp Plugin -->
-<a href="https://wa.me/15875667545" target="_blank" class="whatsapp-btn" title="Communicate directly with the Sheikh">
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="white">
-        <path d="M16 1.4C7.9 1.4 1.4 7.9 1.4 16c0 2.6.7 5.1 2 7.3L1.5 30.5l7.4-1.9c2.2 1.2 4.6 1.8 7.2 1.8 8.1 0 14.6-6.5 14.6-14.6S24.1 1.4 16 1.4zm0 24.5c-2.2 0-4.3-.6-6.1-1.7l-.4-.3-4.5 1.2 1.2-4.4-.3-.5c-1.2-1.9-1.9-4.2-1.9-6.5 0-6.9 5.6-12.5 12.5-12.5s12.5 5.6 12.5 12.5-5.6 12.5-12.5 12.5zM22.8 19c-.4-.2-2.2-1.1-2.6-1.2-.4-.1-.6-.2-.9.2-.2.4-1 1.2-1.2 1.4-.2.2-.5.3-.9.1-1.9-1-3.6-2.5-4.8-4.3-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.4l.3-.4c.1-.2.2-.3.1-.6 0-.2-.9-2.2-1.2-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.8.1-1.2.6-.4.5-1.5 1.5-1.5 3.6s1.6 4.2 1.8 4.5c.2.3 3.1 4.7 7.5 6.6 1 .4 1.9.7 2.6.9 1.1.3 2 .2 2.7.1.8-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.3-.3-.4-.7-.6z"/>
-    </svg>
+
+<style>
+.whatsapp-btn { position:fixed; bottom:24px; right:24px; background:#25d366; color:white; padding:12px 22px; border-radius:50px; display:flex; align-items:center; gap:10px; text-decoration:none; z-index:1000; box-shadow:0 4px 15px rgba(37,211,102,0.4); font-family:'Rajdhani',sans-serif; font-weight:700; font-size:1rem; letter-spacing:1px; transition:transform 0.3s, box-shadow 0.3s; }
+.whatsapp-btn:hover { transform:translateY(-3px); box-shadow:0 8px 25px rgba(37,211,102,0.5); color:white; }
+@media (max-width:768px) { .whatsapp-btn span { display:none; } .whatsapp-btn { padding:14px; } }
+</style>
+<a href="https://wa.me/15875667545" target="_blank" class="whatsapp-btn" title="Message Sheikh Mohamed Moamen on WhatsApp">
+    <svg viewBox="0 0 32 32" width="24" height="24" fill="white"><path d="M16 1.4C7.9 1.4 1.4 7.9 1.4 16c0 2.6.7 5.1 2 7.3L1.5 30.5l7.4-1.9c2.2 1.2 4.6 1.8 7.2 1.8 8.1 0 14.6-6.5 14.6-14.6S24.1 1.4 16 1.4zm0 24.5c-2.2 0-4.3-.6-6.1-1.7l-.4-.3-4.5 1.2 1.2-4.4-.3-.5c-1.2-1.9-1.9-4.2-1.9-6.5 0-6.9 5.6-12.5 12.5-12.5s12.5 5.6 12.5 12.5-5.6 12.5-12.5 12.5zM22.8 19c-.4-.2-2.2-1.1-2.6-1.2-.4-.1-.6-.2-.9.2-.2.4-1 1.2-1.2 1.4-.2.2-.5.3-.9.1-1.9-1-3.6-2.5-4.8-4.3-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.4l.3-.4c.1-.2.2-.3.1-.6 0-.2-.9-2.2-1.2-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.8.1-1.2.6-.4.5-1.5 1.5-1.5 3.6s1.6 4.2 1.8 4.5c.2.3 3.1 4.7 7.5 6.6 1 .4 1.9.7 2.6.9 1.1.3 2 .2 2.7.1.8-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.3-.3-.4-.7-.6z"/></svg>
     <span>Direct Message</span>
 </a>
+
 </body>
 </html>
-
