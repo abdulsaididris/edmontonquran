@@ -438,6 +438,62 @@ section { position: relative; z-index: 1; padding: 7rem 6%; }
 }
 .schedule-card p { color: var(--text); margin-top: 0.5rem; font-weight: 500; }
 
+/* ── CUSTOM BOOK ── */
+.book-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.book-image-wrap {
+    position: relative;
+}
+.book-image-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--gold), transparent, var(--gold));
+    z-index: 0;
+    opacity: 0.6;
+}
+.book-image-wrap img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+.book-info h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+.book-info p {
+    color: var(--text);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+.book-info ul {
+    list-style: none;
+}
+.book-info ul li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: var(--text);
+}
+.book-info ul li .check {
+    color: var(--gold);
+    font-weight: bold;
+}
+
 /* ── ABOUT / SHEIKH ── */
 .sheikh-layout {
     display: grid;
@@ -757,6 +813,8 @@ footer {
 /* ── TABLET ── */
 @media (max-width: 1024px) {
     .sheikh-layout { gap: 3rem; }
+    .book-layout { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+    .book-info ul li { justify-content: center; text-align: left; }
     .hero h1 { font-size: clamp(2rem, 5vw, 4rem); }
 }
 
