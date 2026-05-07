@@ -398,7 +398,167 @@ section { position: relative; z-index: 1; padding: 7rem 6%; }
     pointer-events: none;
 }
 
+/* ── THE DIFFERENCE ── */
+#the-difference {
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(212,175,55,0.03) 50%, rgba(255,255,255,0) 100%);
+}
+
+.difference-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.difference-main {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+.hifz-highlight .lead-text {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: var(--white);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--gold);
+}
+
+.morning-callout {
+    display: flex;
+    gap: 1.5rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+}
+
+.callout-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.callout-text strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
+}
+
+.callout-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.why-us-text h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.why-us-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.approach-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.approach-header h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.2rem;
+    color: var(--white);
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.approach-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    position: relative;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.approach-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(212,175,55,0.1);
+    border-color: var(--gold);
+}
+
+.approach-number {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 3rem;
+    color: rgba(212,175,55,0.1);
+    font-weight: 700;
+}
+
+.approach-card h4 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.approach-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.final-quote {
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.final-quote blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-style: italic;
+    color: var(--gold-light);
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+.final-quote blockquote::before,
+.final-quote blockquote::after {
+    content: '"';
+    font-size: 4rem;
+    opacity: 0.2;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+@media (max-width: 992px) {
+    .difference-main {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
 /* ── SCHEDULE BLOCKS ── */
+
 .schedule-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
